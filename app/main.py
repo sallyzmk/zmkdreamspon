@@ -44,22 +44,23 @@ def recommend():
         # 1차적으로 모든 발화를 한곳에 딕셔너리형태로 수집
         params_df=body['action']['params']
         # {'yes_no': '해당없음', 'job': '고등학생', 'loc': '서울', 'Benefits': '학비지원', 'sys_number': '{"amount": 10, "unit": null}'}
-
+        print(params_df)
         # 본격적으로 발화별 분류
         job=params_df['job'] 
         # 직업(type = str)
-
+        print(job)
         location=params_df['loc']
         # 지역(type = str)
-
+        print(location)
         Benefits=params_df['Benefits']
+        print(Benefits)
         # 장학혜택(type = str)
         age=json.loads(params_df['sys_number'])['amount']
         # 나이(type = str) -> 숫자형을 원하면 int()를 해준다
-
+        print(age)
         yes_no = params_df['yes_no']
         # 특수계층(type = str)
-
+        print(yes_no)
         # SQL에서의 해당글자가 포함된 행 출력 문법을 맞추기위해 앞뒤로 %를 붙혀준다.
         Benefits1="\'%%" + Benefits + "%%\'"
         job1="\'%%" + job + "%%\'"
@@ -67,7 +68,7 @@ def recommend():
         location1 = "\'%%" + location + "%%\'"
         df=start.db_select(Benefits1,job1,age,location1,yes_no1)
         # name과 url의 컬럼을 가진 데이터프레임 만들기
-
+        print(df)
         name=df['name']
         # 데이터프레임의 name컬럼을 시리즈형식으로 저장
         
