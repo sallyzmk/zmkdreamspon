@@ -712,126 +712,63 @@ def recommen2d():
         "template": {
             "outputs": [
                 {
-                "carousel": {
-                "type": "basicCard",
-                "items": [
-                    {
-                    "title": name[5],
-                    "description": "장학금 추천",
-                    "thumbnail": {
-                        "imageUrl": Image[5]
-                    },
-                    "buttons": [
-                        {
-                        "action":"webLink",
-                        "label": "구경하기",
-                        "webLinkUrl": URL[5]
-                        },
-                        {
-                        "action": "share",
-                         "label": "공유하기"
-                        
-                        }
-                        
-                    ]
-                    
-
-                    },
-
-                    {
-                    "title": name[6],
-                    "description": "장학금 추천",
-                    "thumbnail": {
-                        "imageUrl": Image[6]
-                    },
-                    "buttons": [
-                        {
-                        "action":  "webLink",
-                        "label": "구경하기",
-                        "webLinkUrl": URL[6]
-                        },
-
-                        {
-                        "action": "share",
-                        "label": "공유하기"                      
-                        }
-                        
-                    ]
-                    },
-                    {
-                    "title": name[7],
-                    "description": "장학금 추천",
-                    "thumbnail": {
-                        "imageUrl": Image[7]
-                    },
-                    "buttons": [
-                         {
-                        "action": "webLink",
-                        "label": "구경하기",
-                        "webLinkUrl": URL[7]
-                        },
-                        {
-                        "action": "share",
-                        "label": "공유하기"
-                        }
-                       
-                    ]
-                    },
-                    {
-                    "title": name[8],
-                    "description": "장학금 추천",
-                    "thumbnail": {
-                        "imageUrl": Image[8]
-                    },
-                    "buttons": [
-                        {
-                        "action":  "webLink",
-                        "label": "구경하기",
-                        "webLinkUrl": URL[8]
-                        },
-
-                        {
-                        "action": "share",
-                        "label": "공유하기"                      
-                        }
-                        
-                    ]
-                    },
-                    {
-                    "title": name[9],
-                    "description": "장학금 추천",
-                    "thumbnail": {
-                        "imageUrl": Image[9]
-                    },
-                    "buttons": [
-                        {
-                        "action":  "webLink",
-                        "label": "구경하기",
-                        "webLinkUrl": URL[9]
-                        },
-
-                        {
-                        "action": "share",
-                        "label": "공유하기"                      
-                        }
-                        
-                    ]
-                    }
-                ]
-                }
-             }
-            ],
-            "quickReplies": [
+                "listCard": {
+          "header": {
+            "title": "장학금 추가 출력"
+          },
+          "items": [
             {
-                "messageText": "추가 장학금1",
-                "action": "message",
-                "label": "장학금 더보기"
+              "title": name[5],
+              "imageUrl": Image[5],
+              "link": {
+                "web": URL[5]
+              }
+            },
+            {
+              "title": name[6],
+              "imageUrl": Image[6],
+              "link": {
+                "web": URL[6]
+              }
+            },
+            {
+              "title": name[7],
+              "imageUrl": Image[7],
+              "link": {
+                "web": URL[7]
+              }
+            },
+            {
+              "title": name[8],
+              "imageUrl": Image[8],
+              "link": {
+                "web": URL[8]
+              }
+            },
+            {
+              "title": name[9],
+              "imageUrl": Image[9],
+              "link": {
+                "web": URL[9]
+              }
             }
-            
-            ]
+          ],
+          "buttons": [
+            {
+              "label": "더보기",
+              "action": "block",
+              "blockId": "62654c249ac8ed78441532de",
+              "extra": {
+                "key1": "value1",
+                "key2": "value2"
+              }
+            }
+          ]
         }
-    }
-
+      }
+    ]
+  }
+}
     return responseBody
 
 
