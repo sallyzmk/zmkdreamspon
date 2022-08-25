@@ -1,12 +1,17 @@
-from cgi import parse_multipart
-from flask import Flask, request
-import json
+# -*- coding: utf-8 -*-
+from unittest import result
+from flask import Flask, jsonify, request
+import os,sys, json
+import pandas as pd 
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
+import psycopg2
 import start
+
 
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def hello_world():
     return 'Hello World!!'
 
