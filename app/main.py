@@ -39,7 +39,7 @@ def sayHello():
     return responseBody
 
   
-# 장학금 추가로 받아오기 
+# 장학금 추천
 @app.route('/api/recommend', methods=['POST'])
 def recommend():
     try:
@@ -48,7 +48,7 @@ def recommend():
         
         # 1차적으로 모든 발화를 한곳에 딕셔너리형태로 수집
         params_df=body['action']['params']
-        # {'yes_no': '해당없음', 'job': '고등학생', 'loc': '서울', 'Benefits': '학비지원', 'sys_number': '{"amount": 10, "unit": null}'}
+        # {'yes_no': '해당없음', 'job': '고등학생', 'loc': '서울', 'Benefits': '학비지원', 'sys_number_age': '{"amount": 10, "unit": null}'}
 
         # 본격적으로 발화별 분류
         job=params_df['job'] 
@@ -59,7 +59,7 @@ def recommend():
 
         Benefits=params_df['Benefits']
         # 장학혜택(type = str)
-        age=json.loads(params_df['sys_number'])['amount']
+        age=json.loads(params_df['sys_number_age'])['amount']
         # 나이(type = str) -> 숫자형을 원하면 int()를 해준다
 
         yes_no = params_df['yes_no']
@@ -416,7 +416,7 @@ def recommend():
                     "outputs": [
                         {
                             "basicCard": {
-                                "title": '현재 귀하에게 해당되는 장학금이 없습니다.',
+                                "title": '죄송합니다. 해당되는 장학금이 없습니다.',
                                 "buttons": [
                                     
                                     {
@@ -681,6 +681,7 @@ def recommend():
         
     return responseBody
 
+# 장학금 추천 더보기
 @app.route('/api/recommen2d', methods=['POST'])
 def recommen2d():
     body = request.get_json()
@@ -695,7 +696,7 @@ def recommen2d():
     location=params_df['loc']
     print(location)
     Benefits=params_df['Benefits']
-    age=json.loads(params_df['sys_number'])['amount']
+    age=json.loads(params_df['sys_number_age'])['amount']
     yes_no = params_df['yes_no']
 
     Benefits1="\'%%" + Benefits + "%%\'"
@@ -706,7 +707,7 @@ def recommen2d():
     print(df)
     name=df['name']
     URL=df['url']
-    Image=df['image']
+    image=df['image']
     responseBody = {
         "version": "2.0",
         "template": {
@@ -719,35 +720,35 @@ def recommen2d():
           "items": [
             {
               "title": name[5],
-              "imageUrl": Image[5],
+              "imageUrl": image[5],
               "link": {
                 "web": URL[5]
               }
             },
             {
               "title": name[6],
-              "imageUrl": Image[6],
+              "imageUrl": image[6],
               "link": {
                 "web": URL[6]
               }
             },
             {
               "title": name[7],
-              "imageUrl": Image[7],
+              "imageUrl": image[7],
               "link": {
                 "web": URL[7]
               }
             },
             {
               "title": name[8],
-              "imageUrl": Image[8],
+              "imageUrl": image[8],
               "link": {
                 "web": URL[8]
               }
             },
             {
               "title": name[9],
-              "imageUrl": Image[9],
+              "imageUrl": image[9],
               "link": {
                 "web": URL[9]
               }
