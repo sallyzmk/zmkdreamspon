@@ -45,7 +45,7 @@ def db_select(choice,choice1,choice2,choice3,choice4):
     # list 타입
     # 데이터내용 전부 불러서 rows에 입력
     
-    df = pd.DataFrame(rows, columns = ['name','url'])
+    df = pd.DataFrame(rows, columns = ['name','url', 'image'])
     # DataFrame으로 만들어주기
     # 컬럼명을 지정
     return df
