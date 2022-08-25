@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    start.db_create()
     return '15'
 
 # 카카오톡 텍스트형 응답
@@ -85,12 +86,12 @@ def recommend():
                                 {
                                     "action": "block",
                                     "label": "처음으로",
-                                    "blockId": "62fae42870055f434dcd241b"
+                                    "blockId": "63046387191dee5f02601e87"
                                 },
                                 {
                                     "action": "block",
                                     "label": "다시하기",
-                                    "blockId": "63045f97bda32f3914d2fc41"
+                                    "blockId": "63046387191dee5f02601e87"
                                 }
                             ]  
                         },
