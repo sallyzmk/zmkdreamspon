@@ -78,6 +78,7 @@ def recommend():
         
         URL=df['url']
         # 데이터프레임의 url컬럼을 시리즈형식으로 저장
+        Image=df['image']
     except:
     # 혹시 잘못입력했는데 끝까지 진행했을 경우 출력
         responseBody = {
@@ -130,7 +131,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%881.jpg?raw=true"
+                                "imageUrl": Image[0]
                             },
                             "buttons": [
                                 {
@@ -153,7 +154,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%882.jpg?raw=true"
+                                "imageUrl": Image[1]
                             },
                             "buttons": [
                                 {
@@ -173,7 +174,7 @@ def recommend():
                             "title": name[2],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%883.jpg?raw=true"
+                                "imageUrl": Image[2]
                             },
                             "buttons": [
                                 {
@@ -192,7 +193,7 @@ def recommend():
                             "title": name[3],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%884.jpg?raw=true"
+                                "imageUrl": Image[3]
                             },
                             "buttons": [
                                 {
@@ -212,7 +213,7 @@ def recommend():
                             "title": name[4],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%885.jpg?raw=true"
+                                "imageUrl": Image[4]
                             },
                             "buttons": [
                                 {
@@ -263,7 +264,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%881.jpg?raw=true"
+                                "imageUrl": Image[0]
                             },
                             "buttons": [
                                 {
@@ -306,7 +307,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%881.jpg?raw=true"
+                                "imageUrl": Image[0]
                             },
                             "buttons": [
                                 {
@@ -326,7 +327,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%882.jpg?raw=true"
+                                "imageUrl": Image[1]
                             },
                             "buttons": [
                                 {
@@ -368,7 +369,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%881.jpg?raw=true"
+                                "imageUrl": Image[0]
                             },
                             "buttons": [
                                 {
@@ -388,7 +389,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%882.jpg?raw=true"
+                                "imageUrl": Image[1]
                             },
                             "buttons": [
                                 {
@@ -408,7 +409,7 @@ def recommend():
                             "title": name[2],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%882.jpg?raw=true"
+                                "imageUrl": Image[2]
                             },
                             "buttons": [
                                 {
@@ -449,7 +450,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%881.jpg?raw=true"
+                                "imageUrl": Image[0]
                             },
                             "buttons": [
                                 {
@@ -468,7 +469,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%882.jpg?raw=true"
+                                "imageUrl": Image[1]
                             },
                             "buttons": [
                                 {
@@ -488,7 +489,7 @@ def recommend():
                             "title": name[2],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%882.jpg?raw=true"
+                                "imageUrl": Image[2]
                             },
                             "buttons": [
                                 {
@@ -508,7 +509,7 @@ def recommend():
                             "title": name[3],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": "https://github.com/seungukkim/flower75982/blob/main/image/%EC%9E%A5%ED%95%99%EA%B8%882.jpg?raw=true"
+                                "imageUrl": Image[3]
                             },
                             "buttons": [
                                 {
