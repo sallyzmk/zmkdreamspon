@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def hello_world():
-    # start.db_create()
     return 'Hello World!!'
 
 # 카카오톡 텍스트형 응답
