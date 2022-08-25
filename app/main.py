@@ -416,13 +416,9 @@ def recommend():
                     "outputs": [
                         {
                             "basicCard": {
-                                "title": '잘못입력하셨습니다',
+                                "title": '현재 귀하에게 해당되는 장학금이 없습니다.',
                                 "buttons": [
-                                    {
-                                        "action": "block",
-                                        "label": "처음으로",
-                                        "blockId": "62fae42870055f434dcd241b"
-                                    },
+                                    
                                     {
                                         "action": "block",
                                         "label": "다시하기",
