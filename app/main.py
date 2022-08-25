@@ -6,7 +6,7 @@ import start
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def hello_world():
     # start.db_create()
     return 'Hello World!!'
