@@ -66,12 +66,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    db_create()
+    #db_create()
     return "Hello World!"
 
 
 if __name__ == "__main__":
-    db_create()
+    #db_create()
     # db_select()
     # db_select1()
     app.run()
