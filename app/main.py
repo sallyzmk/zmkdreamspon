@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    # start.db_create()
+    start.db_create()
     return 'Hello World!!!!!!!'
 
 # 카카오톡 텍스트형 응답
@@ -112,7 +112,7 @@ def recommend():
     # 갯수를 새주는 len()사용
     # 인덱스가 1개일때 베이직카드 1개 출력, 인덱스가 2개일때 베이직카드 2개 출력...
     # 5개 이상이면 리스트출력
-        if len(df) >= 5:
+        if len(df) > 5:
             responseBody = {
                 "version": "2.0",
                 "template": {
@@ -283,6 +283,26 @@ def recommend():
                             
                         ]
                         }
+                    }
+                    ]
+                }
+            }
+        elif(len(df)) == 0 :
+            responseBody = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                        "basicCard": {
+                            "title": '현재 추천되는 장학금이 없습니다.',
+                            "buttons": [
+                                {
+                                    "action": "block",
+                                    "label": "다시하기",
+                                    "blockId": "63045f97bda32f3914d2fc41"
+                                }
+                            ]  
+                        },
                     }
                     ]
                 }
@@ -528,6 +548,130 @@ def recommend():
                     }
                 }
             ]
+        elif len(df) == 5:
+            responseBody = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "simpleText": {
+                                
+                                "text": "검색된 장학금은 총 : {}개 입니다".format(len(df))
+                            }
+                        },
+                        {
+                        "carousel": {
+                        "type": "basicCard",
+                        "items": [
+                            {
+                            "title": name[0],
+                            "description": "장학금 추천",
+                            "thumbnail": {
+                                "imageUrl": Image[0]
+                            },
+                            "buttons": [
+                                {
+                                "action":"webLink",
+                                "label": "구경하기",
+                                "webLinkUrl": URL[0]
+                                },
+                                {
+                                "action": "share",
+                                "label": "공유하기"
+                            
+                                }
+                            
+                            ]
+                        
+
+                            },
+
+                            {
+                            "title": name[1],
+                            "description": "장학금 추천",
+                            "thumbnail": {
+                                "imageUrl": Image[1]
+                            },
+                            "buttons": [
+                                {
+                                "action":  "webLink",
+                                "label": "구경하기",
+                                "webLinkUrl": URL[1]
+                                },
+
+                                {
+                                "action": "share",
+                                "label": "공유하기"                      
+                                }
+                            
+                            ]
+                            },
+                            {
+                            "title": name[2],
+                            "description": "장학금 추천",
+                            "thumbnail": {
+                                "imageUrl": Image[2]
+                            },
+                            "buttons": [
+                                {
+                                "action": "webLink",
+                                "label": "구경하기",
+                                "webLinkUrl": URL[2]
+                                },
+                                {
+                                "action": "share",
+                                "label": "공유하기"
+                                }
+                        
+                            ]
+                            },
+                            {
+                            "title": name[3],
+                            "description": "장학금 추천",
+                            "thumbnail": {
+                                "imageUrl": Image[3]
+                            },
+                            "buttons": [
+                                {
+                                "action":  "webLink",
+                                "label": "구경하기",
+                                "webLinkUrl": URL[3]
+                                },
+
+                                {
+                                "action": "share",
+                                "label": "공유하기"                      
+                                }
+                            
+                            ]
+                            },
+                            {
+                            "title": name[4],
+                            "description": "장학금 추천",
+                            "thumbnail": {
+                                "imageUrl": Image[4]
+                            },
+                            "buttons": [
+                                {
+                                "action":  "webLink",
+                                "label": "구경하기",
+                                "webLinkUrl": URL[4]
+                                },
+
+                                {
+                                "action": "share",
+                                "label": "공유하기"                      
+                                }
+                            
+                            ]
+                            }
+                        ]
+                        }
+                    }
+                    ]
+                    
+                }
+            }
         }
     }
         
