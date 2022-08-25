@@ -51,7 +51,7 @@ def area_db(naming):
     # cursor = 임시 객체생성
     # 생성된 임시객체를 cur에 저장
     #name = "\'월성장학회 주변지역 장학'"
-    result = engine.execute.execute("SELECT name, url, image FROM dreamspon WHERE name LIKE '%%{}%%';".format(naming))
+    result = engine.execute("SELECT name, url, image FROM dreamspon WHERE name LIKE '%%{}%%';".format(naming))
     # sql문장을 실행할 수 있게 해주는 메서드
     # name 컬럼에 naming이 포함되는 행 출력해주는 쿼리
     # 데이터내용 전부 불러서 rows에 입력
