@@ -44,19 +44,23 @@ def db_select(choice,choice1,choice2,choice3,choice4):
     # DataFrame으로 만들어주기
     # 컬럼명을 지정
     return df
-    
+                 
+def area_db(naming):
+# 입력된 이름이 포함된 행을 불러오는 함수
 
-
-
-def db_select1():
-    list=[]
-    # choice="\'생활비지원'"
-    # result= engine.execute("SELECT name,url FROM dreamspon WHERE who LIKE'%%대학생%%'")
-    result= engine.execute("SELECT name,url FROM dreamspon WHERE (age IS null OR age < 25) AND who LIKE '%%대학생%%' AND (where1 LIKE '%%서울%%' OR where1 IS null) AND (qualification LIKE '%%기초수급자%%' OR qualification IS null) AND advantage LIKE '%%학비지원%%'")
-    
-    for r in result: 
-        print(r)
-             
+    # cursor = 임시 객체생성
+    # 생성된 임시객체를 cur에 저장
+    #name = "\'월성장학회 주변지역 장학'"
+    result = engine.execute.execute("SELECT name, url, image FROM dreamspon WHERE name LIKE '%%{}%%';".format(naming))
+    # sql문장을 실행할 수 있게 해주는 메서드
+    # name 컬럼에 naming이 포함되는 행 출력해주는 쿼리
+    # 데이터내용 전부 불러서 rows에 입력
+    # list 타입
+    df = pd.DataFrame(result, columns = ['name', 'url', 'image'])
+    #print(df)
+    # DataFrame으로 만들어주기
+    # 컬럼명을 지정
+    return df
         
 app = Flask(__name__)
 
