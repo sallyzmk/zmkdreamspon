@@ -73,7 +73,7 @@ def recommend():
         # 데이터프레임의 name컬럼을 시리즈형식으로 저장
         
         URL=df['url']
-        Image=df['image']
+        image=df['image']
 
         # 데이터프레임의 url컬럼을 시리즈형식으로 저장
     except:
@@ -128,7 +128,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[0]
+                                "imageUrl": image[0]
                             },
                             "buttons": [
                                 {
@@ -151,7 +151,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[1]
+                                "imageUrl": image[1]
                             },
                             "buttons": [
                                 {
@@ -171,7 +171,7 @@ def recommend():
                             "title": name[2],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[2]
+                                "imageUrl": image[2]
                             },
                             "buttons": [
                                 {
@@ -190,7 +190,7 @@ def recommend():
                             "title": name[3],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[3]
+                                "imageUrl": image[3]
                             },
                             "buttons": [
                                 {
@@ -210,7 +210,7 @@ def recommend():
                             "title": name[4],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[4]
+                                "imageUrl": image[4]
                             },
                             "buttons": [
                                 {
@@ -261,7 +261,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[0]
+                                "imageUrl": image[0]
                             },
                             "buttons": [
                                 {
@@ -304,7 +304,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[0]
+                                "imageUrl": image[0]
                             },
                             "buttons": [
                                 {
@@ -324,7 +324,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[1]
+                                "imageUrl": image[1]
                             },
                             "buttons": [
                                 {
@@ -366,7 +366,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[0]
+                                "imageUrl": image[0]
                             },
                             "buttons": [
                                 {
@@ -386,7 +386,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[1]
+                                "imageUrl": image[1]
                             },
                             "buttons": [
                                 {
@@ -406,7 +406,7 @@ def recommend():
                             "title": name[2],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[2]
+                                "imageUrl": image[2]
                             },
                             "buttons": [
                                 {
@@ -425,6 +425,31 @@ def recommend():
                         ]
                         }
                     }
+                    ]
+                }
+            }
+        elif(len(df)) == 0 :
+            responseBody = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "basicCard": {
+                                "title": '해당하는 공고가 없습니다.',
+                                "buttons": [
+                                    {
+                                        "action": "block",
+                                        "label": "처음으로",
+                                        "blockId": "63046387191dee5f02601e87"
+                                    },
+                                    {
+                                        "action": "block",
+                                        "label": "다시하기",
+                                        "blockId": "63046387191dee5f02601e87"
+                                    }
+                                ]  
+                            },
+                        }
                     ]
                 }
             }
@@ -447,7 +472,7 @@ def recommend():
                             "title": name[0],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[0]
+                                "imageUrl": image[0]
                             },
                             "buttons": [
                                 {
@@ -466,7 +491,7 @@ def recommend():
                             "title": name[1],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[1]
+                                "imageUrl": image[1]
                             },
                             "buttons": [
                                 {
@@ -486,7 +511,7 @@ def recommend():
                             "title": name[2],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[2]
+                                "imageUrl": image[2]
                             },
                             "buttons": [
                                 {
@@ -506,7 +531,7 @@ def recommend():
                             "title": name[3],
                             "description": "장학금 추천",
                             "thumbnail": {
-                                "imageUrl": Image[3]
+                                "imageUrl": image[3]
                             },
                             "buttons": [
                                 {

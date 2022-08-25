@@ -4,9 +4,9 @@ from flask import Flask
 import pandas as pd 
 from sqlalchemy import create_engine
 import psycopg2
-engine = create_engine("postgresql://kczlivirywphmd:92be7484071849e5bdc99cde3148129fafb4c480a15b0fa66a0c2838d8ef7988@ec2-3-219-19-205.compute-1.amazonaws.com:5432/d52u3agrcchahb", echo = False)
+#engine = create_engine("postgresql://kczlivirywphmd:92be7484071849e5bdc99cde3148129fafb4c480a15b0fa66a0c2838d8ef7988@ec2-3-219-19-205.compute-1.amazonaws.com:5432/d52u3agrcchahb", echo = False)
 
-engine.connect()
+#engine.connect()
 
 ## DB 연결 
 def db_create():
@@ -31,7 +31,7 @@ def db_create():
 
 
 def db_select(choice,choice1,choice2,choice3,choice4):
-    #conn = psycopg2.connect(host="ec2-3-219-19-205.compute-1.amazonaws.com", dbname="d52u3agrcchahb", user="kczlivirywphmd", password="92be7484071849e5bdc99cde3148129fafb4c480a15b0fa66a0c2838d8ef7988")
+    conn = psycopg2.connect(host="ec2-3-219-19-205.compute-1.amazonaws.com", dbname="d52u3agrcchahb", user="kczlivirywphmd", password="92be7484071849e5bdc99cde3148129fafb4c480a15b0fa66a0c2838d8ef7988")
     # heroku에 배포되어 있는 데이터베이스에 접속하기
     
     cur = conn.cursor()
