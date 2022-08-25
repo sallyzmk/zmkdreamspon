@@ -34,18 +34,13 @@ def db_select(choice,choice1,choice2,choice3,choice4):
     #conn = psycopg2.connect(host="ec2-3-219-19-205.compute-1.amazonaws.com", dbname="d52u3agrcchahb", user="kczlivirywphmd", password="92be7484071849e5bdc99cde3148129fafb4c480a15b0fa66a0c2838d8ef7988")
     # heroku에 배포되어 있는 데이터베이스에 접속하기
     
-    cur = conn.cursor()
     # choice="\'%%생활비지원%%'"
     # choice1="\'%%대학생%%'"
     # choice2=25
     # choice3="\'%%서울%%'"
     # choice4="\'%%기초수급자%%'"
-    cur.execute("SELECT name,url,image FROM dreamspon WHERE advantage LIKE {0} AND who like {1} AND (age IS null OR age < {2}) AND (where1 IS null or where1 LIKE {3}) AND (qualification IS null or qualification LIKE {4})".format(choice,choice1,choice2,choice3,choice4))
-    rows = cur.fetchall() 
-    # list 타입
-    # 데이터내용 전부 불러서 rows에 입력
-    
-    df = pd.DataFrame(rows, columns = ['name','url', 'image'])
+    result = engine.execute("SELECT name,url,image FROM dreamspon WHERE advantage LIKE {0} AND who like {1} AND (age IS null OR age < {2}) AND (where1 IS null or where1 LIKE {3}) AND (qualification IS null or qualification LIKE {4})".format(choice,choice1,choice2,choice3,choice4))
+    df = pd.DataFrame(result, columns = ['name','url', 'image'])
     # DataFrame으로 만들어주기
     # 컬럼명을 지정
     return df
