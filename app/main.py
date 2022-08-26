@@ -836,6 +836,27 @@ def Lookup():
             }  
         }
 
-            
+        elif(len(df)) == 0 :
+            responseBody = {
+                "version": "2.0",
+                "template": {
+                    "outputs": [
+                        {
+                            "basicCard": {
+                                "title": '장학금 명을 잘못 입력하셨습니다. 상단의 리스트를 확인 후 다시 입력해 주세요.',
+                                "buttons": [
+                                    
+                                    {
+                                        "action": "block",
+                                        "label": "다시하기",
+                                        "blockId": "63070991f395392e2cfb59f2"
+                                    }
+                                ]  
+                            },
+                        }
+                            
+                        ]
+                    }
+            }
 
     return responseBody
