@@ -48,7 +48,7 @@ def recommend():
         
         # 1차적으로 모든 발화를 한곳에 딕셔너리형태로 수집
         params_df=body['action']['params']
-        # {'yes_no': '해당없음', 'job': '고등학생', 'loc': '서울', 'Benefits': '학비지원', 'sys_number_age': '{"amount": 10, "unit": null}'}
+        # {'yes_no': '해당없음', 'job': '고등학생', 'loc': '서울', 'Benefits': '학비지원', 'sys_number': '{"amount": 10, "unit": null}'}
 
         # 본격적으로 발화별 분류
         job=params_df['job'] 
@@ -59,7 +59,7 @@ def recommend():
 
         Benefits=params_df['Benefits']
         # 장학혜택(type = str)
-        age=json.loads(params_df['sys_number_age'])['amount']
+        age=json.loads(params_df['sys_number'])['amount']
         # 나이(type = str) -> 숫자형을 원하면 int()를 해준다
 
         yes_no = params_df['yes_no']
@@ -696,7 +696,7 @@ def recommen2d():
     location=params_df['loc']
     print(location)
     Benefits=params_df['Benefits']
-    age=json.loads(params_df['sys_number_age'])['amount']
+    age=json.loads(params_df['sys_number'])['amount']
     yes_no = params_df['yes_no']
 
     Benefits1="\'%%" + Benefits + "%%\'"
